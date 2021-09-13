@@ -97,11 +97,11 @@
 /* tracking protection shield icon */
 #tracking-protection-icon-container { display: none !important; }
 
-/* #identity-box { display: none !important } /* hides encryption AND permission items */
-#identity-permission-box { display: none !important; } /* only hodes permission items */
+ #identity-box { display: none !important }  /*hides encryption AND permission items */
+#identity-permission-box { display: none !important; } /* only hodes permission items 
 
 /* e.g. playing indicator */
-.tab-secondary-label { display: none !important; }
+/*.tab-secondary-label { display: none !important; }*/
 
 /*#pageActionButton { display: none !important; }*/
 /*#page-action-buttons { display: none !important; }*/
@@ -156,8 +156,8 @@ window,
     > .tab-background { background: var(--uc-hover-colour) !important; }
 
 /* tab close button options */
-.tabbrowser-tab:not([pinned]) .tab-close-button { display: var(--show-tab-close-button) !important; }
-.tabbrowser-tab:not([pinned]):hover .tab-close-button { display: var(--show-tab-close-button-hover) !important }
+/*.tabbrowser-tab:not([pinned]) .tab-close-button { display: var(--show-tab-close-button) !important; }
+.tabbrowser-tab:not([pinned]):hover .tab-close-button { display: var(--show-tab-close-button-hover) !important }*/
 
 /* remove window control buttons */
 .titlebar-buttonbox-container { display: none !important; }

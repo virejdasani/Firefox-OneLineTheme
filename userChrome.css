@@ -1,0 +1,228 @@
+/*==============================================================================================*
+
+  +-----+-----+-----+-----+-----+-----+-----+
+  | █▀▀ | ▄▀█ | █▀▀ | █▀▀ | ▄▀█ | █▀▄ | █▀▀ |
+  | █▄▄ | █▀█ | ▄▄█ | █▄▄ | █▀█ | █▄▀ | ██▄ |
+  +-----+-----+-----+-----+-----+-----+-----+
+
+
+  Description:    Minimalist, Simple, Keyboard Centered and heavily based on SimpleFox. 🦊
+                  What you get is a really simple one-line layout using the new Proton UI.
+
+                  > SimpleFox: https://github.com/migueravila/SimpleFox
+
+                  #
+  Author:         Andreas Grafen
+                  (https://andreas.grafen.info)
+
+                  
+  Repository:     https://github.com/andreasgrafen/ag.proton
+
+
+                  Thank you Nick for all the great suggestions for improvements! ♡
+                  (https://github.com/nicksundermeyer)
+
+*==============================================================================================*/
+
+
+
+/*---+---+---+---+---+---+
+ | C | O | N | F | I | G |
+ +---+---+---+---+---+---*/
+
+
+ :root {
+    
+    /* COLOUR DEFINITIONS */
+    /* Comment this block out if you want to keep the default theme colour. */
+    /* This will also work with custom colours from color.firefox.com. */
+  
+    /* Theme Colour Suggestions
+     *                   Dark       Light    */
+    --window-colour:    #1E2021; /* #FAFAFC; */
+    --secondary-colour: #191B1C; /* #EAEAEC; */
+
+    --button-hover-bgcolor:         var(--secondary-colour) !important;
+    --toolbar-bgcolor:              var(--window-colour) !important;
+    --tabs-border-color:            var(--window-colour) !important;
+    --lwt-sidebar-background-color: var(--secondary-colour) !important;
+    --lwt-toolbar-field-focus:      var(--window-colour) !important;
+
+}
+
+
+
+:root {
+
+    --urlbar-width: clamp(550px, 40vw, 550px);
+
+    /* dynamic tab width settings */
+    --active-tab-width:   clamp(100px, 20vw, 300px);
+    --inactive-tab-width: clamp( 50px, 15vw, 200px);
+
+    /* adds left and right margin to the container-tabs indicator */
+    --container-tabs-indicator-margin: 10px;
+
+    /* if active always shows the tab close button */
+    --show-tab-close-button: none; /* DEFAULT: -moz-inline-box; */ 
+
+    /* if active only shows the tab close button on hover*/
+    --show-tab-close-button-hover: none; /* DEFAULT: -moz-inline-box; */
+
+    --uc-theme-colour: var(--toolbar-bgcolor);
+    --uc-hover-colour: var(--button-hover-bgcolor);
+
+    --toolbarbutton-border-radius: 0 !important;
+    --tab-border-radius:           0 !important;
+    --tab-block-margin:            2px !important;
+
+}
+
+
+/*
+#back-button,
+#forward-button { display: none !important; }*/
+
+/* bookmark icon */
+/*#star-button{ display: none !important; }*/
+
+/* zoom indicator */
+#urlbar-zoom-button { display: none !important; }
+
+/*  hides context burger menu BUT causes popups to be buggy at times */
+#PanelUI-button { display: none !important; }
+
+#reader-mode-button{ display: none !important; }
+
+/* tracking protection shield icon */
+#tracking-protection-icon-container { display: none !important; }
+
+/* #identity-box { display: none !important } /* hides encryption AND permission items */
+#identity-permission-box { display: none !important; } /* only hodes permission items */
+
+/* e.g. playing indicator */
+.tab-secondary-label { display: none !important; }
+
+/*#pageActionButton { display: none !important; }*/
+/*#page-action-buttons { display: none !important; }*/
+
+
+
+
+
+/*---+---+---+---+---+---+
+ | L | A | Y | O | U | T |
+ +---+---+---+---+---+---*/
+
+
+window,
+#main-window,
+#toolbar-menubar,
+#TabsToolbar,
+#PersonalToolbar,
+#navigator-toolbox,
+#sidebar-box,
+#nav-bar {
+
+    -moz-appearance: none !important;
+    
+    border: none !important;
+    box-shadow: none !important;
+    background: var(--uc-theme-colour) !important;
+
+}
+
+
+
+
+/* remove "padding" left and right from tabs */
+.titlebar-spacer { display: none !important; }
+
+/* remove gap after pinned tabs */
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])
+    > #tabbrowser-arrowscrollbox
+    > .tabbrowser-tab[first-visible-unpinned-tab] { margin-inline-start: 0 !important; }
+
+.tabbrowser-tab
+    >.tab-stack
+    > .tab-background { box-shadow: none !important;  }
+
+.tabbrowser-tab
+    > .tab-stack
+    > .tab-background { background: var(--uc-theme-colour) !important; }
+
+.tabbrowser-tab[selected]
+    > .tab-stack
+    > .tab-background { background: var(--uc-hover-colour) !important; }
+
+/* tab close button options */
+.tabbrowser-tab:not([pinned]) .tab-close-button { display: var(--show-tab-close-button) !important; }
+.tabbrowser-tab:not([pinned]):hover .tab-close-button { display: var(--show-tab-close-button-hover) !important }
+
+/* remove window control buttons */
+.titlebar-buttonbox-container { display: none !important; }
+
+/* adaptive tab width */
+.tabbrowser-tab[selected][fadein]:not([pinned]) { max-width: var(--active-tab-width) !important; }
+.tabbrowser-tab[fadein]:not([selected]):not([pinned]) { max-width: var(--inactive-tab-width) !important; }
+
+
+/* container tabs indicator */
+.tabbrowser-tab[usercontextid]
+    > .tab-stack
+    > .tab-background
+    > .tab-context-line {
+    
+        margin: -1px var(--container-tabs-indicator-margin) 0 var(--container-tabs-indicator-margin) !important;
+
+        border-radius: var(--tab-border-radius) !important;
+
+}
+
+
+
+
+
+#nav-bar {
+
+    border:     none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+
+}
+
+/* remove border below whole nav */
+#navigator-toolbox { border-bottom: none !important; }
+
+#urlbar,
+#urlbar * { box-shadow: none !important; }
+
+#urlbar-background { border: var(--uc-hover-colour) !important; }
+
+#urlbar[focused="true"]
+    > #urlbar-background,
+#urlbar:not([open])
+    > #urlbar-background { background: transparent !important; }
+
+#urlbar[open]
+    > #urlbar-background { background: var(--uc-theme-colour) !important; }
+
+.urlbarView-row:hover
+    > .urlbarView-row-inner,
+.urlbarView-row[selected]
+    > .urlbarView-row-inner { background: var(--uc-hover-colour) !important; }
+    
+
+
+
+
+/* transition to oneline */
+@media (min-width: 800px) { 
+    
+    /* move tabs bar over */
+    #TabsToolbar { margin-left: var(--urlbar-width) !important; }
+
+    /* move entire nav bar  */
+    #nav-bar { margin: calc((var(--urlbar-min-height) * -1) - 8px) calc(100vw - var(--urlbar-width)) 0 0 !important; }
+
+}

@@ -40,7 +40,7 @@
     /* Theme Colour Suggestions
      *                   Dark       Light    */
     --window-colour:    #1E2021; /* #FAFAFC; */
-    --secondary-colour: #191B1C; /* #EAEAEC; */
+    --secondary-colour: #2d2d2d; /* #EAEAEC; */
 
     --button-hover-bgcolor:         var(--secondary-colour) !important;
     --toolbar-bgcolor:              var(--window-colour) !important;

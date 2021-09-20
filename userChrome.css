@@ -64,16 +64,16 @@
     --container-tabs-indicator-margin: 10px;
 
     /* if active always shows the tab close button */
-    --show-tab-close-button: none; /* DEFAULT: -moz-inline-box; */ 
+    /*--show-tab-close-button: none; */
 
     /* if active only shows the tab close button on hover*/
-    --show-tab-close-button-hover: none; /* DEFAULT: -moz-inline-box; */
+    /*--show-tab-close-button-hover: none; */
 
     --uc-theme-colour: var(--toolbar-bgcolor);
     --uc-hover-colour: var(--button-hover-bgcolor);
 
-    --toolbarbutton-border-radius: 0 !important;
-    --tab-border-radius:           0 !important;
+/*    --toolbarbutton-border-radius: 0 !important;
+    --tab-border-radius:           0 !important;*/
     --tab-block-margin:            2px !important;
 
 }
@@ -133,8 +133,6 @@ window,
 }
 
 
-
-
 /* remove "padding" left and right from tabs */
 .titlebar-spacer { display: none !important; }
 
@@ -178,9 +176,6 @@ window,
         border-radius: var(--tab-border-radius) !important;
 
 }
-
-
-
 
 
 #nav-bar {
